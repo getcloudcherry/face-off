@@ -14,7 +14,7 @@ labelList = [0,0,0,0,0,0,0,0,0,0]
 index = 0
 
 for path in images:
-	temp = pre.getFace(path)
+	temp = pre.getFaceGray(path)
 	temp = cv2.resize(temp,(369,512))
 	faceList.append(temp)			
 	print "[INFO] Image Loaded: " + str(index+1)
@@ -38,7 +38,7 @@ faceListTest = []
 prediction = {}
 index = 0
 for path in imagesTest:
-	testSample = pre.getFace(path)			#np.array.shape = (256,256)
+	testSample = pre.getFaceGray(path)			#np.array.shape = (256,256)
 	testSample = cv2.resize(testSample,(369,512))
 	print "[INFO] Test Image Loaded: " + str(index+1)
 	prediction[index] = []
